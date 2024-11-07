@@ -1,0 +1,56 @@
+@import "./components.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  --header-height: 1rem;
+  --footer-height: 1rem;
+  --white: #fff;
+  --safe-area-y: 1rem;
+  --safe-area-x: 1rem;
+
+  --bg-primary: rgb(255, 255, 255);
+  --bg-secondary: rgb(18, 18, 18);
+
+  --text-primary: rgb(18, 18, 18);
+  --text-secondary: rgb(255, 255, 255);
+
+  --text-gray: rgb(18, 18, 18);
+  --bg-gray: rgb(110, 110, 110);
+
+  --br: 1rem;
+  --gap: 1rem;
+  --small-gap: 0.5rem;
+
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+#root {
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

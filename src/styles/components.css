@@ -1,0 +1,53 @@
+button {
+  border-radius: var(--br) !important;
+}
+
+button.primary {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+button.secondary {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+h1,
+h1 span {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h1 span {
+  background: linear-gradient(
+    90deg,
+    rgb(18, 18, 18) 0%,
+    rgba(18, 18, 18, 0.3) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.primary-input {
+  position: relative;
+}
+
+.primary-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--bg-secondary);
+  border-radius: calc(2 * var(--br));
+  padding: calc(var(--small-gap) / 1.2);
+}
+
+.primary-input input {
+  border: none;
+}

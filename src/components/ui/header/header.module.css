@@ -1,0 +1,22 @@
+.header {
+  position: sticky;
+  padding: var(--safe-area-x) var(--safe-area-y);
+  width: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.header .content {
+  display: flex;
+  justify-content: space-between;
+  border-radius: var(--br);
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+}
+
+.header img {
+  border-radius: 100%;
+}
+
+.header {
+  top: 0;
+}
