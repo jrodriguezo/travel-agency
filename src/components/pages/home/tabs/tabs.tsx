@@ -1,13 +1,14 @@
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Props } from "@/models/props";
+import { TabsHomeProps } from "./tabs.interface";
+import { StatusEnum } from "@/constants/tabs";
 
-function TabsHome({ className }: Pick<Props, "className">) {
+function TabsHome({ className, currentTab, onTabChange }: TabsHomeProps) {
   return (
-    <Tabs defaultValue="all" className={className}>
+    <Tabs value={currentTab} onValueChange={onTabChange} className={className}>
       <TabsList>
-        <TabsTrigger value="all">All</TabsTrigger>
-        <TabsTrigger value="upcoming">Upcoming</TabsTrigger>
-        <TabsTrigger value="completed">Completed</TabsTrigger>
+        <TabsTrigger value={StatusEnum.ALL}>All</TabsTrigger>
+        <TabsTrigger value={StatusEnum.TODO}>Upcoming</TabsTrigger>
+        <TabsTrigger value={StatusEnum.DONE}>Completed</TabsTrigger>
       </TabsList>
     </Tabs>
   );
