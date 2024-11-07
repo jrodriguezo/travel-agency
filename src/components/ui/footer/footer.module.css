@@ -1,11 +1,22 @@
 .footer {
   position: sticky;
-  padding: var(--safe-area-x) var(--safe-area-y);
+  padding: calc(var(--safe-area-y) / 2) var(--safe-area-x);
   width: 100%;
-  background-color: var(--bg-secondary);
   backdrop-filter: blur(10px);
+  color: var(--text-primary);
 }
 
 .footer {
   bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--small-gap);
+}
+
+.footer span {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  padding: 0.2rem var(--small-gap);
+  border-radius: var(--br);
 }

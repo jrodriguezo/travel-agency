@@ -6,8 +6,8 @@ function TabsHome({ className }: Pick<Props, "className">) {
     <Tabs defaultValue="all" className={className}>
       <TabsList>
         <TabsTrigger value="all">All</TabsTrigger>
-        <TabsTrigger value="upcoming">upcoming</TabsTrigger>
-        <TabsTrigger value="completed">completed</TabsTrigger>
+        <TabsTrigger value="upcoming">Upcoming</TabsTrigger>
+        <TabsTrigger value="completed">Completed</TabsTrigger>
       </TabsList>
     </Tabs>
   );
