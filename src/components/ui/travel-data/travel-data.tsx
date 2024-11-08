@@ -1,10 +1,14 @@
 import { TravelCardProps } from "./travel-data.interface";
 import styles from "@/components/ui/travel-data/travel-data.module.css";
 
-const TravelCard = ({ travel, index }: TravelCardProps) => {
+const TravelCard = ({
+  travel,
+  index,
+  onDelete = () => {},
+  onEdit = () => {},
+  onSeeTripDetails = () => {},
+}: TravelCardProps) => {
   const { title, description, photo_url: photoUrl } = travel;
-
-  const handleDelete = () => {};
 
   return (
     <article className={styles["travel-card"]}>
@@ -21,10 +25,14 @@ const TravelCard = ({ travel, index }: TravelCardProps) => {
         </h2>
         <p>{description || "No description"}</p>
         <footer className={styles.actions}>
-          <button>See trip details</button>
+          <button onClick={() => onSeeTripDetails(index)}>
+            See trip details
+          </button>
           <div>
-            <button>Edit</button>
-            <button className={styles.delete}>Delete</button>
+            <button onClick={() => onDelete(index)}>Edit</button>
+            <button className={styles.delete} onClick={() => onEdit(index)}>
+              Delete
+            </button>
           </div>
         </footer>
       </div>
