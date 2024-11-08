@@ -11,7 +11,8 @@ test("has title", async ({ page }) => {
 
 test("can create a new trip", async ({ page }) => {
   await page.getByRole("button", { name: "Create a new trip" }).click();
-  const modalTitleLocator = page.locator("h2");
-  await expect(modalTitleLocator).toBeVisible();
+  const modalTitleLocator = page.getByRole("heading", {
+    name: "Create a trip",
+  });
   await expect(modalTitleLocator).toHaveText("Create a trip");
 });

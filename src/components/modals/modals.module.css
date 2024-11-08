@@ -1,0 +1,77 @@
+.base-modal {
+  position: absolute;
+  inset: calc(3 * var(--gap));
+  border: 1px solid rgb(204, 204, 204);
+  overflow: auto;
+  border-radius: var(--br);
+  outline: none;
+  padding: calc(2 * var(--gap));
+  background: var(--bg-primary);
+  max-width: var(--max-width-modal);
+  margin: 0 auto;
+}
+
+.base-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: hsl(0, 0%, 100%, 80%);
+  z-index: 2;
+}
+
+.base-modal header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.base-modal header button {
+  padding: 0.8rem;
+  border-radius: 100% !important;
+}
+
+.base-modal h2 {
+  font-size: 2rem;
+}
+
+.base-modal .group {
+  margin-top: var(--gap);
+}
+
+.base-modal .group input,
+.base-modal .group textarea,
+.base-modal .group article {
+  margin-top: var(--small-gap);
+}
+
+.base-modal .submit-button {
+  margin-top: var(--gap);
+  max-width: 10rem;
+  width: 100%;
+}
+
+.base-modal .card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  gap: var(--gap);
+  padding: calc(2 * var(--gap));
+  border-radius: var(--br);
+  background-color: hsl(0, 0%, 90%);
+}
+
+.base-modal .card-aside {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.base-modal .card-aside input {
+  margin-top: 0;
+}
+
+.base-modal .card input,
+.base-modal .card textarea,
+.base-modal .card button {
+  background: var(--bg-primary);
+}
