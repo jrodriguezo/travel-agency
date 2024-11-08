@@ -1,50 +1,63 @@
-# React + TypeScript + Vite
+# Exoticca - Your Dream Travel Agency 🌍✈️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Exoticca**! We are a travel agency dedicated to providing you with the most exciting and memorable experiences in exotic destinations around the world. From paradise beaches to mountain adventures, we are here to make your travel dreams come true.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is built using the following technologies:
 
-## Expanding the ESLint configuration
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A superset of JavaScript that adds optional static types.
+- **Vite**: A modern framework for web application development that allows for fast reloading.
+- **Tailwind CSS**: A CSS framework for designing without leaving HTML.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Important Packages
 
-- Configure the top-level `parserOptions` property like this:
+Here’s a list of key packages used in this project:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Dependencies
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- `react`: Core library for building the UI.
+- `react-dom`: Interacts with the DOM.
+- `react-hook-form`: Form management in React.
+- `react-modal`: For implementing modal windows.
+- `react-toastify`: For real-time notifications.
+- `@radix-ui/react-select`, `@radix-ui/react-tabs`: Sophisticated UI components.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### DevDependencies
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- `vite`: Build and development tool.
+- `eslint`: Linting tool to ensure code quality.
+- `typescript`: Support for TypeScript.
+
+## How to Run the Project on Localhost
+
+To develop and run the project on your local machine, follow these steps:
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/jrodriguezo/travel-agency
+   cd travel-agency
+   ```
+2. **Install dependencies**:
+
+   ```bash
+    npm install
+   ```
+
+3. **Start the development server**:
+
+   ```bash
+    npm run dev
+   ```
+
+4. **Enjoy at http://localhost:5173**
+
+Available Scripts
+Here are some useful commands you can use during development:
+
+- npm run dev: Starts the development server with Hot Module Replacement.
+- npm run test: Runs all defined tests.
+- npm run test:e2e: Runs end-to-end tests with Playwright.
+
