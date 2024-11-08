@@ -7,7 +7,7 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.content}>
         <Logo />
-        <Button className="primary">Create a new trip</Button>
+        <Button variant="secondary">Create a new trip</Button>
       </div>
     </header>
   );

@@ -18,12 +18,10 @@
   background-color: var(--bg-primary);
   color: var(--text-gray);
   border: 1px solid var(--bg-gray);
-  border-radius: calc(2 * var(--br));
-  padding: calc(var(--small-gap) / 1.2);
+  border-radius: calc(2 * calc(2 * var(--br)));
   position: sticky;
-  top: 0;
+  top: 51.33px;
   margin-top: calc(3 * var(--gap));
-  margin-left: auto;
   z-index: 1;
 }
 
@@ -32,23 +30,30 @@
   height: 36px;
 }
 
-.home-page .tabs button[data-state="active"] {
-  background-color: var(--bg-secondary);
-  color: var(--text-secondary);
+.home-page .tabs button[role="tab"] {
+  background-color: var(--bg-primary);
 }
 
+.home-page .tabs button[data-state="active"] {
+  background-color: var(--secondary-foreground);
+  color: var(--secondary);
+}
+
+.home-page .tabs,
 .home-page .tabs button:first-child {
-  border-top-left-radius: var(--br) !important;
-  border-bottom-left-radius: var(--br) !important;
+  border-top-left-radius: calc(2 * var(--br)) !important;
+  border-bottom-left-radius: calc(2 * var(--br)) !important;
+}
+
+.home-page .tabs,
+.home-page .tabs button:last-child {
+  border-top-right-radius: calc(2 * var(--br)) !important;
+  border-bottom-right-radius: calc(2 * var(--br)) !important;
 }
 
 .home-page .tabs div[role="tablist"] {
   padding: 0;
-}
-
-.home-page .tabs button:last-child {
-  border-top-right-radius: var(--br) !important;
-  border-bottom-right-radius: var(--br) !important;
+  border-radius: inherit;
 }
 
 .home-page .travel {
@@ -62,17 +67,20 @@
   max-height: 10rem;
 }
 
+.home-page .tabs {
+  width: 100%;
+  max-width: 273.36px;
+  margin: 0 auto;
+  margin-top: calc(3 * var(--gap));
+}
+
+.home-page .tabs button,
+.home-page .tabs div[role="tablist"] {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .home-page .tabs {
-    top: 51.33px;
-    width: 100%;
     max-width: 294.36px;
-    margin: 0 auto;
-    margin-top: calc(3 * var(--gap));
-  }
-
-  .home-page .tabs button,
-  .home-page .tabs div[role="tablist"] {
-    width: 100%;
   }
 }

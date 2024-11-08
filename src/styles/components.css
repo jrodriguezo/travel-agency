@@ -2,6 +2,10 @@ button {
   border-radius: var(--br) !important;
 }
 
+input {
+  box-shadow: none;
+}
+
 h1,
 h1 span {
   font-size: 2rem;
