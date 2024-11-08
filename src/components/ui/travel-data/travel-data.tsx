@@ -8,12 +8,18 @@ const TravelCard = ({ travel, index }: TravelCardProps) => {
 
   return (
     <article className={styles["travel-card"]}>
-      <img src={photoUrl} alt={title} />
+      <img
+        src={
+          photoUrl ||
+          "https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ="
+        }
+        alt={title}
+      />
       <div className={styles["travel-content"]}>
         <h2>
-          <span>{title}</span>
+          <span>{title || "Title"}</span>
         </h2>
-        <p>{description}</p>
+        <p>{description || "No description"}</p>
         <footer className={styles.actions}>
           <button>See trip details</button>
           <div>
