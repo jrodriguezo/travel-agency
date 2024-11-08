@@ -55,6 +55,8 @@
     max-height: 10rem;
     aspect-ratio: 1;
     border-radius: var(--br);
+    max-width: unset;
+    object-fit: cover;
   }
 
   .travel-content {
