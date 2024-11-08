@@ -9,6 +9,7 @@ import { getTravelData } from "@/services/getTravelData";
 import { filterTab } from "@/utils/filter-tabs/filter-tabs";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import Loader from "@/components/icons/loader";
 
 function Home() {
   const [activeTab, setActiveTab] = useState(StatusEnum.ALL);
@@ -55,7 +56,7 @@ function Home() {
         onTabChange={handleTabChange}
         className={styles.tabs}
       />
-      {isLoading && "Loading..."}
+      {isLoading && <Loader className={styles.loader} />}
       {!isLoading && (
         <section className={styles.travel}>
           {travelsToDisplay.map((travel) => {
