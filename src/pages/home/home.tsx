@@ -2,24 +2,21 @@ import TabsHome from "@/components/pages/home/tabs/tabs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import TravelCard from "@/components/ui/travel-data/travel-data";
-import { Travel } from "@/components/ui/travel-data/travel-data.type";
 import { StatusEnum } from "@/constants/tabs";
 import styles from "@/pages/home/home.module.css";
-import { getTravelData } from "@/services/getTravelData";
 import { filterTab } from "@/utils/filter-tabs/filter-tabs";
-import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import { useState } from "react";
 import Loader from "@/components/icons/loader";
 import { filterByText } from "@/utils/filer-by-text/filter-by-text";
 import useDebounce from "@/hooks/useDebounce";
 import { v4 as uuidv4 } from "uuid";
+import { useTravelContext } from "@/contexts/travel-context/useTravelContext";
 
 function Home() {
   const [activeTab, setActiveTab] = useState(StatusEnum.ALL);
-  const [isLoading, setIsLoading] = useState(true);
-  const [travels, setTravels] = useState<Travel[]>([]);
   const [inputValue, setInputValue] = useState("");
   const debouncedInputValue = useDebounce(inputValue, 300);
+  const { travels, isLoading } = useTravelContext();
 
   const handleTabChange = (value: string) => {
     setActiveTab(value as StatusEnum);
@@ -28,23 +25,6 @@ function Home() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
-
-  useEffect(() => {
-    const fetchTravelData = async () => {
-      try {
-        setIsLoading(true);
-        const [error, data] = await getTravelData();
-        if (error) throw error;
-        setTravels(data);
-      } catch (e) {
-        toast.error(e?.toString());
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchTravelData();
-  }, []);
 
   const travelsToDisplay = filterByText(
     debouncedInputValue,
