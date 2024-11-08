@@ -1,18 +1,17 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+test.beforeEach(async ({ page }) => {
+  await page.goto("http://localhost:5173");
 });
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test("has title", async ({ page }) => {
+  const title = await page.locator("h1");
+  await expect(title).toHaveText("The places you dream of");
+});
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+test("can create a new trip", async ({ page }) => {
+  await page.getByRole("button", { name: "Create a new trip" }).click();
+  const modalTitleLocator = page.locator("h2");
+  await expect(modalTitleLocator).toBeVisible();
+  await expect(modalTitleLocator).toHaveText("Create a trip");
 });
