@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import TravelCard from "@/components/ui/travel-data/travel-data";
 import { StatusEnum } from "@/constants/tabs";
-import styles from "@/pages/home/home.module.css";
 import { filterTab } from "@/utils/filter-tabs/filter-tabs";
 import { useState } from "react";
 import Loader from "@/components/icons/loader";
@@ -11,6 +10,7 @@ import { filterByText } from "@/utils/filer-by-text/filter-by-text";
 import useDebounce from "@/hooks/useDebounce";
 import { v4 as uuidv4 } from "uuid";
 import { useTravelContext } from "@/contexts/travel-context/useTravelContext";
+import styles from "@/pages/home/home.module.css";
 
 function Home() {
   const [activeTab, setActiveTab] = useState(StatusEnum.ALL);
@@ -55,8 +55,8 @@ function Home() {
       {isLoading && <Loader className={styles.loader} />}
       {!isLoading && (
         <section className={styles.travel}>
-          {travelsToDisplay.map((travel) => {
-            return <TravelCard key={uuidv4()} travel={travel} />;
+          {travelsToDisplay.map((travel, index) => {
+            return <TravelCard key={uuidv4()} travel={travel} index={index} />;
           })}
         </section>
       )}

@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 import { filterTab } from "@/utils/filter-tabs/filter-tabs";
-import { travels } from "@/test/mockup.js";
+import { travels } from "@/test/mockup.ts";
 import { StatusEnum } from "@/constants/tabs.js";
 
 test("Filter done travels", () => {

@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { travels } from "@/test/mockup.js";
+import { travels } from "@/test/mockup.ts";
 import { filterByText } from "@/utils/filer-by-text/filter-by-text";
 
 test("Filter title by nothing", () => {
