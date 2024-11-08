@@ -16,7 +16,7 @@ function Home() {
   const [activeTab, setActiveTab] = useState(StatusEnum.ALL);
   const [inputValue, setInputValue] = useState("");
   const debouncedInputValue = useDebounce(inputValue, 300);
-  const { travels, isLoading } = useTravelContext();
+  const { travels, isLoading, onChangeTravels } = useTravelContext();
 
   const handleTabChange = (value: string) => {
     setActiveTab(value as StatusEnum);
@@ -24,6 +24,10 @@ function Home() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
+  };
+
+  const handleDelete = (index: number) => {
+    onChangeTravels((travels) => travels.filter((_, idx) => index !== idx));
   };
 
   const travelsToDisplay = filterByText(
@@ -56,7 +60,14 @@ function Home() {
       {!isLoading && (
         <section className={styles.travel}>
           {travelsToDisplay.map((travel, index) => {
-            return <TravelCard key={uuidv4()} travel={travel} index={index} />;
+            return (
+              <TravelCard
+                onDelete={handleDelete}
+                key={uuidv4()}
+                travel={travel}
+                index={index}
+              />
+            );
           })}
         </section>
       )}

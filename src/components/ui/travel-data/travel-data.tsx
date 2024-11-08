@@ -29,8 +29,8 @@ const TravelCard = ({
             See trip details
           </button>
           <div>
-            <button onClick={() => onDelete(index)}>Edit</button>
-            <button className={styles.delete} onClick={() => onEdit(index)}>
+            <button onClick={() => onEdit(index)}>Edit</button>
+            <button className={styles.delete} onClick={() => onDelete(index)}>
               Delete
             </button>
           </div>
