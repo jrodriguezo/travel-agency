@@ -11,12 +11,19 @@ import useDebounce from "@/hooks/useDebounce";
 import { v4 as uuidv4 } from "uuid";
 import { useTravelContext } from "@/contexts/travel-context/useTravelContext";
 import styles from "@/pages/home/home.module.css";
+import TripDetailsModal from "@/components/modals/trip-details-modal/trip-details-modal";
 
 function Home() {
   const [activeTab, setActiveTab] = useState(StatusEnum.ALL);
   const [inputValue, setInputValue] = useState("");
+  const [isOpenDetailsModal, setIsOpenDetailsModal] = useState(false);
   const debouncedInputValue = useDebounce(inputValue, 300);
   const { travels, isLoading, onChangeTravels } = useTravelContext();
+  const [currentTravelIndex, setCurrentTravelIndex] = useState<
+    number | undefined
+  >(undefined);
+
+  const onChangeDetailsModal = () => setIsOpenDetailsModal((prev) => !prev);
 
   const handleTabChange = (value: string) => {
     setActiveTab(value as StatusEnum);
@@ -30,6 +37,11 @@ function Home() {
     onChangeTravels((travels) => travels.filter((_, idx) => index !== idx));
   };
 
+  const handleDetails = (index: number) => {
+    setCurrentTravelIndex(index);
+    onChangeDetailsModal();
+  };
+
   const travelsToDisplay = filterByText(
     debouncedInputValue,
     filterTab(activeTab, travels)
@@ -37,6 +49,13 @@ function Home() {
 
   return (
     <section className={styles["home-page"]}>
+      <TripDetailsModal
+        travel={
+          currentTravelIndex != null ? travels[currentTravelIndex] : undefined
+        }
+        isOpen={isOpenDetailsModal}
+        onChangeModal={onChangeDetailsModal}
+      />
       <header>
         <h1>
           <span>The places you dream of</span>
@@ -62,6 +81,7 @@ function Home() {
           {travelsToDisplay.map((travel, index) => {
             return (
               <TravelCard
+                onSeeTripDetails={handleDetails}
                 onDelete={handleDelete}
                 key={uuidv4()}
                 travel={travel}

@@ -1,0 +1,31 @@
+.header {
+  position: relative;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  max-height: 10rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.header button {
+  position: absolute;
+  top: calc(2 * var(--gap));
+  right: calc(2 * var(--gap));
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.content section {
+  margin-top: 10rem;
+  padding: calc(2 * var(--gap));
+}

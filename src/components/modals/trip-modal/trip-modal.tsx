@@ -2,7 +2,6 @@ import Modal from "react-modal";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import styles from "@/components/modals/modals.module.css";
 import { Input } from "@/components/ui/input";
 import { ModalProps } from "@/components/modals/modals.interface";
 import {
@@ -14,6 +13,7 @@ import {
 } from "@/components/ui/select";
 import { useForm, Controller } from "react-hook-form";
 import { Travel } from "@/components/ui/travel-data/travel-data.type";
+import styles from "@/components/modals/modals.module.css";
 
 interface ItineraryItem {
   day: number;
