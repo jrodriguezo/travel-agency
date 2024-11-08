@@ -2,20 +2,6 @@ button {
   border-radius: var(--br) !important;
 }
 
-button.primary {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-}
-
-button.secondary {
-  background-color: var(--bg-secondary);
-  color: var(--text-secondary);
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
 h1,
 h1 span {
   font-size: 2rem;
