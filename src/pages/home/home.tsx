@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import Loader from "@/components/icons/loader";
 import { filterByText } from "@/utils/filer-by-text/filter-by-text";
 import useDebounce from "@/hooks/useDebounce";
+import { v4 as uuidv4 } from "uuid";
 
 function Home() {
   const [activeTab, setActiveTab] = useState(StatusEnum.ALL);
@@ -75,7 +76,7 @@ function Home() {
       {!isLoading && (
         <section className={styles.travel}>
           {travelsToDisplay.map((travel) => {
-            return <TravelCard key={travel.id} travel={travel} />;
+            return <TravelCard key={uuidv4()} travel={travel} />;
           })}
         </section>
       )}
