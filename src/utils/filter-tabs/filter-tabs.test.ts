@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { filterTab } from "./filter-tabs.js";
+import { filterTab } from "@/utils/filter-tabs/filter-tabs";
 import { travels } from "@/test/mockup.js";
 import { StatusEnum } from "@/constants/tabs.js";
 
