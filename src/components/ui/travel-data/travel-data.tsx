@@ -1,6 +1,12 @@
 import { TravelCardProps } from "./travel-data.interface";
 import styles from "@/components/ui/travel-data/travel-data.module.css";
 
+const BUTTONS = {
+  EDIT: "Edit",
+  DELETE: "Delete",
+  SEE_TRIPS: "See trip details",
+};
+
 const TravelCard = ({
   travel,
   index,
@@ -26,12 +32,12 @@ const TravelCard = ({
         <p>{description || "No description"}</p>
         <footer className={styles.actions}>
           <button onClick={() => onSeeTripDetails(index)}>
-            See trip details
+            {BUTTONS.SEE_TRIPS}
           </button>
           <div>
-            <button onClick={() => onEdit(index)}>Edit</button>
+            <button onClick={() => onEdit(index)}>{BUTTONS.EDIT}</button>
             <button className={styles.delete} onClick={() => onDelete(index)}>
-              Delete
+              {BUTTONS.DELETE}
             </button>
           </div>
         </footer>
