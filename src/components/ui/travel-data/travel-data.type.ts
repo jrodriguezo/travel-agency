@@ -1,3 +1,5 @@
+import { StatusEnum } from "@/constants/tabs";
+
 export type Id = number;
 export type Title = string;
 export type PhotoUrl = string;
@@ -11,7 +13,7 @@ export type ItineraryItem = {
   description: Description;
 };
 
-export type Status = "todo" | "done";
+export type Status = StatusEnum.TODO | StatusEnum.DONE;
 
 export type Travel = {
   id: Id;
