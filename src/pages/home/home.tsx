@@ -34,7 +34,9 @@ function Home() {
   };
 
   const handleDelete = (index: number) => {
-    onChangeTravels((travels) => travels.filter((_, idx) => index !== idx));
+    onChangeTravels((travels) =>
+      travels.filter((travel) => travel.id !== index)
+    );
   };
 
   const handleDetails = (index: number) => {
@@ -51,7 +53,9 @@ function Home() {
     <section className={styles["home-page"]}>
       <TripDetailsModal
         travel={
-          currentTravelIndex != null ? travels[currentTravelIndex] : undefined
+          currentTravelIndex != null
+            ? travels.find((trip) => trip.id === currentTravelIndex)
+            : undefined
         }
         isOpen={isOpenDetailsModal}
         onChangeModal={onChangeDetailsModal}
@@ -78,14 +82,13 @@ function Home() {
       {isLoading && <Loader className={styles.loader} />}
       {!isLoading && (
         <section className={styles.travel}>
-          {travelsToDisplay.map((travel, index) => {
+          {travelsToDisplay.map((travel) => {
             return (
               <TravelCard
                 onSeeTripDetails={handleDetails}
                 onDelete={handleDelete}
-                key={uuidv4()}
+                key={travel.id}
                 travel={travel}
-                index={index}
               />
             );
           })}

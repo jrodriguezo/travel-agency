@@ -9,12 +9,11 @@ const BUTTONS = {
 
 const TravelCard = ({
   travel,
-  index,
   onDelete = () => {},
   onEdit = () => {},
   onSeeTripDetails = () => {},
 }: TravelCardProps) => {
-  const { title, description, photo_url: photoUrl } = travel;
+  const { id, title, description, photo_url: photoUrl } = travel;
 
   return (
     <article className={styles["travel-card"]}>
@@ -31,12 +30,12 @@ const TravelCard = ({
         </h2>
         <p>{description || "No description"}</p>
         <footer className={styles.actions}>
-          <button onClick={() => onSeeTripDetails(index)}>
+          <button onClick={() => onSeeTripDetails(id)}>
             {BUTTONS.SEE_TRIPS}
           </button>
           <div>
-            <button onClick={() => onEdit(index)}>{BUTTONS.EDIT}</button>
-            <button className={styles.delete} onClick={() => onDelete(index)}>
+            <button onClick={() => onEdit(id)}>{BUTTONS.EDIT}</button>
+            <button className={styles.delete} onClick={() => onDelete(id)}>
               {BUTTONS.DELETE}
             </button>
           </div>

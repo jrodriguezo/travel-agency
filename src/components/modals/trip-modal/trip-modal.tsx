@@ -17,7 +17,7 @@ import styles from "@/components/modals/modals.module.css";
 import { StatusEnum } from "@/constants/tabs";
 import { ItineraryItem } from "@/components/ui/travel-data/travel-data.type";
 
-interface FormData {
+export interface FormData {
   id?: Id;
   title: string;
   introduction: string;

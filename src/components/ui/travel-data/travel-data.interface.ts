@@ -1,6 +1,5 @@
 import {
   Id,
-  Travel,
   Description,
   Day,
   Location,
@@ -11,7 +10,6 @@ import {
 
 export interface TravelCardProps {
   travel: Travel;
-  index: Id;
   onDelete?: (index: Id) => void;
   onEdit?: (index: Id) => void;
   onSeeTripDetails?: (index: Id) => void;
