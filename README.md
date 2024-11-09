@@ -34,11 +34,26 @@ Here are some useful commands you can use during development:
    ```bash
    npm run test
    ```
+   - You will get something like this:
+
+      ```
+      Test Files  2 passed (2)
+           Tests  8 passed (8)
+      ```
+
 2. **Run end-to-end tests with Playwright**:
 
    ```bash
     npm test:e2e
    ```
+   
+    - You will get something like this:
+
+      ```
+      Running 24 tests using 4 workers
+         24 passed (9.7s)
+      ```
+
 ## Technologies Used
 
 This project is built using the following technologies:
@@ -66,3 +81,6 @@ Here’s a list of key packages used in this project:
 - `eslint`: Linting tool to ensure code quality.
 - `typescript`: Support for TypeScript.
 
+### Demo
+
+https://github.com/user-attachments/assets/8b71e234-d1c7-4732-a53e-b7ea15c63666
