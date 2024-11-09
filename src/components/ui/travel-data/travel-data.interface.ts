@@ -1,9 +1,9 @@
-import { Travel } from "./travel-data.type";
+import { Id, Travel } from "./travel-data.type";
 
 export interface TravelCardProps {
   travel: Travel;
-  index: number;
-  onDelete?: (index: number) => void;
-  onEdit?: (index: number) => void;
-  onSeeTripDetails?: (index: number) => void;
+  index: Id;
+  onDelete?: (index: Id) => void;
+  onEdit?: (index: Id) => void;
+  onSeeTripDetails?: (index: Id) => void;
 }
