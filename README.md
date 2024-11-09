@@ -44,7 +44,7 @@ Here are some useful commands you can use during development:
 2. **Run end-to-end tests with Playwright**:
 
    ```bash
-    npm test:e2e
+    npm run test:e2e
    ```
    
     - You will get something like this:
