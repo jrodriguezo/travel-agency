@@ -12,16 +12,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useForm, Controller } from "react-hook-form";
-import { Travel } from "@/components/ui/travel-data/travel-data.type";
+import { Id, Travel } from "@/components/ui/travel-data/travel-data.type";
 import styles from "@/components/modals/modals.module.css";
+import { StatusEnum } from "@/constants/tabs";
+import { ItineraryItem } from "@/components/ui/travel-data/travel-data.type";
 
-interface ItineraryItem {
-  day: number;
-  location: string;
-  description: string;
-}
 interface FormData {
-  id?: number;
+  id?: Id;
   title: string;
   introduction: string;
   description: string;
@@ -46,7 +43,7 @@ function TripModal({
       title: data.title,
       description: data.description,
       photo_url: data.image,
-      status: "todo",
+      status: StatusEnum.TODO,
       itinerary:
         selectedDay && location && itineraryDescription
           ? [{ day: selectedDay, location, description: itineraryDescription }]

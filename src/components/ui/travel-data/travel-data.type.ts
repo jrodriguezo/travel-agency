@@ -4,7 +4,7 @@ export type Id = number;
 export type Title = string;
 export type PhotoUrl = string;
 export type Description = string;
-export type Day = string;
+export type Day = number;
 export type Location = string;
 
 export type ItineraryItem = {
