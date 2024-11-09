@@ -13,7 +13,12 @@ function Header() {
   const onChangeModal = () => setIsOpenModal((prev) => !prev);
 
   const handleSubmit = (travel: Travel) => {
-    onChangeTravels((prev) => [...prev, travel]);
+    //eslint-disable-next-line
+    const { id, ...restOfTravel } = travel;
+    onChangeTravels((prev) => [
+      ...prev,
+      { id: prev.length + 1, ...restOfTravel },
+    ]);
     onChangeModal();
   };
 
